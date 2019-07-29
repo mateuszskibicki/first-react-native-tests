@@ -13,7 +13,11 @@ const Navigation = props => {
         title="screen 2"
         color="blue"
         secondary
-        onPress={() => props.navigation.navigate("SecondScreen")}
+        onPress={() =>
+          props.navigation.navigate("SecondScreen", {
+            itemId: Math.floor(Math.random() * 100)
+          })
+        }
       />
     </View>
   );
