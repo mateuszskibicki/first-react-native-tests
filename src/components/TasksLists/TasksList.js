@@ -1,22 +1,30 @@
 import React from "react";
 import { connect } from "react-redux";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  FlatList
+} from "react-native";
 
 import { deleteTask } from "../../store/actions";
 
 const TasksList = ({ deleteTask, tasks }) => {
+  console.log(tasks);
   return (
     <View style={styles.listWrapper}>
       <View style={styles.tasksWrapper}>
-        {tasks &&
-          tasks.length > 0 &&
-          tasks.map((task, index) => (
-            <TouchableOpacity onPress={() => deleteTask(task)} key={index}>
+        <FlatList
+          data={tasks}
+          renderItem={({ item }) => (
+            <TouchableOpacity onPress={() => deleteTask(item.text)}>
               <View style={styles.singleTaskWrapper}>
-                <Text style={styles.singleTask}>{task}</Text>
+                <Text style={styles.singleTask}>{item.text}</Text>
               </View>
             </TouchableOpacity>
-          ))}
+          )}
+        />
       </View>
     </View>
   );

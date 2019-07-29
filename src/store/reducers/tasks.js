@@ -10,13 +10,16 @@ const reducer = (state = initialState, action) => {
     case ADD_TASK:
       return {
         ...state,
-        tasks: [...state.tasks, action.payload.task]
+        tasks: [
+          ...state.tasks,
+          { text: action.payload.task, key: String(Math.random()) }
+        ]
       };
     case DELETE_TASK:
       return {
         ...state,
         tasks: state.tasks.filter(
-          singleTask => action.payload.task !== singleTask
+          singleTask => action.payload.task !== singleTask.text
         )
       };
     default:
