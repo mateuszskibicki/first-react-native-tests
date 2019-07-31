@@ -11,7 +11,6 @@ import {
 import { deleteTask } from "../../store/actions";
 
 const TasksList = ({ deleteTask, tasks }) => {
-  console.log(tasks);
   return (
     <View style={styles.listWrapper}>
       <View style={styles.tasksWrapper}>
@@ -46,7 +45,8 @@ const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 32
+    marginTop: 32,
+    padding: 4
   },
   tasksWrapper: {
     width: "90%"
@@ -55,14 +55,9 @@ const styles = StyleSheet.create({
     display: "flex",
     marginBottom: 16,
     backgroundColor: "#fff",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 1
-    },
-    shadowOpacity: 0.2,
-    shadowRadius: 2.82,
-    elevation: 3
+    borderWidth: 1,
+    borderColor: "#eee",
+    borderRadius: 5
   },
   singleTask: {
     fontSize: 20,

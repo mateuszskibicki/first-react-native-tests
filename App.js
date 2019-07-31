@@ -23,11 +23,7 @@ const TabNavigator = createBottomTabNavigator(
           height: 40,
           borderTop: "none",
           borderTopColor: "#ddd",
-          borderTopWidth: 0
-        },
-        tabStyle: {
-          borderRadius: 100,
-          width: 150
+          borderTopWidth: 2
         },
         keyboardHidesTabBar: false
       }
